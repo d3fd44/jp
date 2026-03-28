@@ -8,7 +8,6 @@ fn print_usage() {
         "<options>".blue(),
         "-h".blue()
     );
-    std::process::exit(1);
 }
 
 fn main() {
@@ -16,6 +15,7 @@ fn main() {
 
     if args.len() < 2 {
         print_usage();
+        std::process::exit(1);
     }
 
     let buf = jp::read_file(&args[1]).unwrap();
