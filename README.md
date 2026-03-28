@@ -8,5 +8,6 @@ jp example.json
 
 ## TODO
 - [x] pretty output
+- [ ] better error handling
 - [ ] filters
 - [ ] edit
