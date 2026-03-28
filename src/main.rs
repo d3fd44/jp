@@ -1,19 +1,21 @@
 use colored::Colorize;
 mod jp;
 
-fn pusage() {}
+fn print_usage() {
+    println!(
+        "{} jp <filename> [{}] \nUse {} option for more details.",
+        "Usage:".green().bold(),
+        "<options>".blue(),
+        "-h".blue()
+    );
+    std::process::exit(1);
+}
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
 
     if args.len() < 2 {
-        println!(
-            "{} jp <filename> [{}] \nUse {} option for more details.",
-            "Usage:".green().bold(),
-            "<options>".blue(),
-            "-h".blue()
-        );
-        std::process::exit(1);
+        print_usage();
     }
 
     let buf = jp::read_file(&args[1]).unwrap();
