@@ -183,7 +183,7 @@ fn parse_null(chars: &mut Peekable<Chars>) -> Result<Json, ParseError> {
     Ok(Json::Null)
 }
 
-/// Parses a literal `true` or `false` and returns the corresponding Avariant.
+/// Parses a literal `true` or `false` and returns the corresponding Variant.
 fn parse_bool(chars: &mut Peekable<Chars>) -> Result<Json, ParseError> {
     match chars.peek() {
         Some(&'t') => {
